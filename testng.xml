@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="AutoCompleteTestSuite" verbose="1">
-  <test name="AutoCompleteTest">
+<suite name="FaceBookTestSuite" verbose="1">
+  <test name="FaceBookTest">
     <classes>
-       <class name="tests.TestAutoSearchComplete">
+       <class name="tests.TestFaceBookPhotoMessage">
        </class>
     </classes>
   </test>

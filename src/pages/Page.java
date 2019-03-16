@@ -3,10 +3,13 @@ package pages;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
@@ -15,7 +18,10 @@ public class Page {
 	
 	public static WebDriver driver;
 	public static Properties prop;
-	public static String searchString;
+	public static String photoPath;
+	public static String facebookLogin;
+	public static String facebookPassword;
+	public static String facebookMessage;
 		
 	public Page() {
 		try {
@@ -27,7 +33,10 @@ public class Page {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		searchString = prop.getProperty("searchKeyword");
+		photoPath = prop.getProperty("photoPath");
+		facebookLogin = prop.getProperty("faceBookLogin");
+		facebookPassword = prop.getProperty("faceBookPassword");
+		facebookMessage = prop.getProperty("faceBookMessage");
 	}
 	
 	
@@ -36,15 +45,11 @@ public class Page {
 		
 		if(browser.equals("chrome")){
 			System.setProperty("webdriver.chrome.driver", "src/data/drivers/chromedriver.exe");	
-			driver = new ChromeDriver(); 
-		}
-		else if(browser.equals("FireFox")){
-			System.setProperty("webdriver.gecko.driver", "src/data/drivers/geckodriver.exe");	
-			driver = new FirefoxDriver(); 
-		}
-		else if(browser.equals("IE")){
-			System.setProperty("webdriver.ie.driver", "src/data/drivers/IEDriverServer.exe");	
-			driver = new InternetExplorerDriver(); 
+			Map<String, Object> prefs = new HashMap<String, Object>();
+			prefs.put("profile.default_content_setting_values.notifications", 2);
+			ChromeOptions options = new ChromeOptions();
+			options.setExperimentalOption("prefs", prefs);
+			driver = new ChromeDriver(options);
 		}
 						
 		driver.manage().window().maximize();
