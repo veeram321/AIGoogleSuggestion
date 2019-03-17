@@ -35,7 +35,7 @@ public class FaceBookHomePage extends Page {
 	 @FindBy(xpath="//button[@type='submit']/span[contains(text(),'Share')]")
      public WebElement faceBookMessageSubmit;
 
-	 @FindBy(xpath="//a[contains(text(),'Home')]")
+	 @FindBy(xpath="//span[contains(text(),'Veeram')]")
      public WebElement faceBookStoryHome;
 	 
 	// Initializing the Page Objects:
