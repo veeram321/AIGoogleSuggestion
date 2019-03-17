@@ -2,7 +2,9 @@
 
 Testing this functionality involves following process.
 
-Note:- Please in data/config.properties file -- Please set facebook login id and password, and absolute path of the photo another point I am using Thread.sleep i.e. hard synchronization for the purpose of uploading photo, some times chrome driver is slow in responding, please run 3 or 4 times for concrete results
+Note1:- Please in data/config.properties file -- Set Absolute path of the photo. 
+
+Note2:- Another point is I am using Thread.sleep i.e. hard synchronization for the purpose of uploading photo, some times chrome driver is slow in responding, please run 3 or 4 times for concrete results
 
 Step1:- Clone the Master branch of this repository through any IDE by taking the URI of this repository.
 
