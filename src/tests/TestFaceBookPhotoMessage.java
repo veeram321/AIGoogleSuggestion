@@ -1,6 +1,5 @@
 package tests;
 
-import org.testng.annotations.Test;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -26,7 +25,7 @@ public class TestFaceBookPhotoMessage extends Page{
 	@Test(priority=0)
 	public void verifyFacebookHomePageLogin() {
 		
-		Assert.assertEquals(faceBookHomePage.facebookTitle(),"Facebook – log in or sign up");
+		Assert.assertEquals(faceBookHomePage.facebookTitle(),"Facebook â€“ log in or sign up");
 		faceBookHomePage.faceBookEmail.clear();
 		faceBookHomePage.faceBookEmail.sendKeys(facebookLogin);
 		faceBookHomePage.faceBookPassword.clear();
